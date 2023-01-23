@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import HeroesPage from './HeroesPage';
+import HeroesPage from './pages/HeroesPage';
 
 function App() {
   return <HeroesPage />;

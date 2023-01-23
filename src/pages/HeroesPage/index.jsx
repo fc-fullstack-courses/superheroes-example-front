@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getHeroes } from '../redux/slices/heroSlice';
+import Hero from '../../components/Hero';
+import { getHeroes } from '../../redux/slices/heroSlice';
 
 function HeroesPage() {
   const { heroes, isLoading, error } = useSelector((state) => state.heroes);
@@ -18,9 +19,11 @@ function HeroesPage() {
     return <div>ERROR</div>;
   }
 
+  const heroesCards = heroes.map(hero => <Hero hero={hero} />)
+
   return (
     <div>
-      <pre>{JSON.stringify(heroes, null , 2)}</pre>
+      <pre>{heroesCards}</pre>
     </div>
   );
 }
